@@ -1,50 +1,29 @@
-# React + TypeScript + Vite
+# Spotify Controller
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto é um controlador remoto para o Spotify, permitindo que as pessoas troquem músicas sem a necessidade de
+acessar diretamente o dispositivo principal. É um projeto caseiro criado para facilitar o controle de música em
+ambientes compartilhados, como casas ou pequenos escritórios.
 
-Currently, two official plugins are available:
+> [!WARNING]
+>
+> **Este projeto não é afiliado ou associado ao Spotify.**
+> O nome "Spotify" é utilizado apenas para fins descritivos, com o intuito de deixar claro que o projeto se destina a
+> controlar a música pelo serviço do Spotify. Este controlador não possui nenhuma ligação oficial com a marca Spotify, e
+> seu uso é estritamente pessoal.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚧 Em Desenvolvimento
 
-## Expanding the ESLint configuration
+Este projeto ainda está em fase de desenvolvimento ativo. Algumas funcionalidades podem estar incompletas ou instáveis.
+Estamos constantemente trabalhando para melhorar a experiência e adicionar novas funcionalidades. Fique à vontade para
+acompanhar o progresso e contribuir com sugestões ou correções.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Recursos
 
-- Configure the top-level `parserOptions` property like this:
+- Controle remoto de músicas no Spotify
+- Troca de músicas sem precisar desbloquear o celular principal
+- Interface customizada com o tema do Spotify
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## 👤 Autor
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+Feito por [cybermumuca](https://github.com/cybermumuca). Se você tiver alguma dúvida ou sugestão, sinta-se à vontade
+para entrar em contato!
