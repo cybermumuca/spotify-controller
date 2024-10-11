@@ -1,4 +1,5 @@
 import spotifyApi from "../../../services/spotify-api.js";
+import {AuthError} from "../../../errors/auth-error.js";
 
 export async function getPlayerState(request, reply) {
   try {
@@ -10,8 +11,15 @@ export async function getPlayerState(request, reply) {
 
     reply.send(data)
   } catch (error) {
+    if (error instanceof AuthError) {
+      return reply.status(401).send({
+        message: error.message,
+      })
+    }
+
     console.log(error)
-    reply.status(500).send({
+
+    return reply.status(500).send({
       message: error.message,
     })
   }

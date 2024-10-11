@@ -1,5 +1,6 @@
 import axios from 'axios';
 import {getTokens, removeTokens, saveTokens} from "../utils/token-utils.js";
+import {AuthError} from "../errors/auth-error.js";
 
 const spotifyApi = axios.create({
   baseURL: "https://api.spotify.com",
@@ -13,6 +14,12 @@ spotifyApi.interceptors.response.use(
   (config) => config,
   async (requestError) => {
     if (requestError.response?.status === 401) {
+      const noTokenProvided = requestError.response.data?.error?.status === 401 && requestError.response.data?.error.message.includes("No token provided");
+
+      if (noTokenProvided) {
+        return Promise.reject(new AuthError("Authentication required"));
+      }
+
       if (requestError.response.data?.error?.status === 401) {
         const tokens = await getTokens();
 
@@ -45,10 +52,14 @@ spotifyApi.interceptors.response.use(
             }, {
               headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
+                Authorization: `Basic ${Buffer.from(`${process.env.SPOTIFY_CLIENT_ID}:${process.env.SPOTIFY_CLIENT_SECRET}`).toString('base64')}`
               }
             });
 
-            await saveTokens({refreshToken: data.refresh_token, accessToken: data.access_token});
+            await saveTokens({
+              refreshToken: data.refresh_token || tokens.refresh_token,
+              accessToken: data.access_token
+            });
 
             if (originalRequest.data) {
               originalRequest.data = JSON.parse(originalRequest.data);
