@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {getTokens, removeTokens, saveTokens} from "./tokenUtils.js";
+import {getTokens, removeTokens, saveTokens} from "../utils/token-utils.js";
 
 const spotifyApi = axios.create({
   baseURL: "https://api.spotify.com",
@@ -79,5 +79,17 @@ spotifyApi.interceptors.response.use(
     return Promise.reject(requestError)
   }
 )
+
+export async function initializeSpotifyApi() {
+  const tokens = await getTokens();
+
+  if (tokens?.accessToken) {
+    spotifyApi.defaults.headers.common['Authorization'] = `Bearer ${tokens.accessToken}`;
+    console.log("Access Token configurado com sucesso na inicialização!");
+  } else {
+    console.log("Nenhum token disponível na inicialização.");
+  }
+}
+
 
 export default spotifyApi;
