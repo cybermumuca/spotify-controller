@@ -10,6 +10,9 @@ export async function getPlayerState(request, reply) {
 
     reply.send(data)
   } catch (error) {
-    reply.status(500).send(error)
+    console.log(error)
+    reply.status(500).send({
+      message: error.message,
+    })
   }
 }

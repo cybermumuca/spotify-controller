@@ -21,5 +21,8 @@ export async function getTokens() {
 }
 
 export async function removeTokens() {
-  await fs.rmdir(tokensFile);
+  try {
+    await fs.rmdir(tokensFile);
+  } catch {
+  }
 }
