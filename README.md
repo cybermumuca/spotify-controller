@@ -13,9 +13,7 @@ ambientes compartilhados, como casas ou pequenos escritórios.
 
 ## 🚧 Em Desenvolvimento
 
-Este projeto ainda está em fase de desenvolvimento ativo. Algumas funcionalidades podem estar incompletas ou instáveis.
-Estamos constantemente trabalhando para melhorar a experiência e adicionar novas funcionalidades. Fique à vontade para
-acompanhar o progresso e contribuir com sugestões ou correções.
+Este projeto ainda está em fase de desenvolvimento ativo. As funcionalidades ainda estão sendo implementadas.
 
 ## Recursos
 
