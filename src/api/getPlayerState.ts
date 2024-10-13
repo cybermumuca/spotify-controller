@@ -7,7 +7,7 @@ export type PlayerState = {
     is_private_session: boolean
     is_restricted: boolean
     name: string
-    type: string
+    type: 'Computer' | 'Smartphone' | 'Speaker'
     volume_percent?: number
     supports_volume: boolean
   }
