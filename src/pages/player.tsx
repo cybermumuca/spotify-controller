@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { getPlayerState, PlayerState } from '../api/getPlayerState.ts'
+import { getPlayerState, PlayerState } from '../api/get-player-state.ts'
 import { Helmet } from 'react-helmet-async'
 import { CaretDown, DotsThreeVertical, Play, SkipBack, SkipForward } from '@phosphor-icons/react'
 import { Monitor, Pause, Repeat, Shuffle, Smartphone, Speaker, SquareAsterisk, Volume1 } from 'lucide-react'
