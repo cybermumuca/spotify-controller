@@ -11,17 +11,10 @@ ambientes compartilhados, como casas ou pequenos escritórios.
 > controlar a música pelo serviço do Spotify. Este controlador não possui nenhuma ligação oficial com a marca Spotify, e
 > seu uso é estritamente pessoal.
 
-## 🚧 Em Desenvolvimento
+📌 Status do Projeto
 
-Este projeto ainda está em fase de desenvolvimento ativo. As funcionalidades ainda estão sendo implementadas.
-
-## Recursos
-
-- Controle remoto de músicas no Spotify
-- Troca de músicas sem precisar desbloquear o celular principal
-- Interface customizada com o tema do Spotify
+No momento, este projeto foi arquivado, pois não está mais em desenvolvimento ativo. Não há planos de novas atualizações ou aprimoramentos.
 
 ## 👤 Autor
 
-Feito por [cybermumuca](https://github.com/cybermumuca). Se você tiver alguma dúvida ou sugestão, sinta-se à vontade
-para entrar em contato!
+Feito por [cybermumuca](https://github.com/cybermumuca).
